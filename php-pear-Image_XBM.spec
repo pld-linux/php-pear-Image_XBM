@@ -7,17 +7,22 @@
 Summary:	%{_pearname} - manipulate XBM images
 Summary(pl):	%{_pearname} - obróbka obrazów XBM
 Name:		php-pear-%{_pearname}
-Version:	0.2.0
-Release:	1.1
+Version:	0.9.0
+%define	_rc RC1
+%define	_rel 0.1
+Release:	%{_rc}.%{_rel}
 License:	PHP 2.02
 Group:		Development/Languages/PHP
-Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
-# Source0-md5:	ac7a8bfd0a526f899797bb810becbfce
+Source0:	http://pear.php.net/get/%{_pearname}-%{version}%{_rc}.tgz
+# Source0-md5:	b31e294640e1e2370a0270288364469e
 URL:		http://pear.php.net/package/Image_XBM/
-BuildRequires:	rpm-php-pearprov >= 4.4.2-12
+BuildRequires:	rpm-php-pearprov >= 4.4.2-11
 Requires:	php-pear
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+
+# exclude optional dependencies
+%define		_noautoreq	'pear(Text/Figlet.*)'
 
 %description
 Package for manipulate XBM images.
@@ -30,8 +35,9 @@ Klasa do obróbki obrazów XBM.
 Ta klasa ma w PEAR status: %{_status}.
 
 %prep
-# FIXME: remove -f if the package.xml gets fixed!
-%pear_package_setup -f
+%pear_package_setup
+install -d docs/%{_pearname}
+mv ./%{php_pear_dir}/data/%{_pearname}/docs/* docs/%{_pearname}
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -40,6 +46,11 @@ install -d $RPM_BUILD_ROOT%{php_pear_dir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
+
+%post
+if [ -f %{_docdir}/%{name}-%{version}/optional-packages.txt ]; then
+	cat %{_docdir}/%{name}-%{version}/optional-packages.txt
+fi
 
 %files
 %defattr(644,root,root,755)
