@@ -9,7 +9,7 @@ Summary(pl):	%{_pearname} - obróbka obrazów XBM
 Name:		php-pear-%{_pearname}
 Version:	0.9.0
 %define	_rc RC1
-%define	_rel 0.1
+%define	_rel 1
 Release:	%{_rc}.%{_rel}
 License:	PHP 2.02
 Group:		Development/Languages/PHP
