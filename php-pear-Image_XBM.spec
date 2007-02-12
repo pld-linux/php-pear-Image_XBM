@@ -5,7 +5,7 @@
 %define		_pearname	%{_class}_%{_subclass}
 
 Summary:	%{_pearname} - manipulate XBM images
-Summary(pl):	%{_pearname} - obr骲ka obraz體 XBM
+Summary(pl.UTF-8):   %{_pearname} - obr贸bka obraz贸w XBM
 Name:		php-pear-%{_pearname}
 Version:	0.9.0
 %define	_rc RC1
@@ -31,8 +31,8 @@ Package for manipulate XBM images.
 
 In PEAR status of this package is: %{_status}.
 
-%description -l pl
-Klasa do obr骲ki obraz體 XBM.
+%description -l pl.UTF-8
+Klasa do obr贸bki obraz贸w XBM.
 
 Ta klasa ma w PEAR status: %{_status}.
 
