@@ -5,7 +5,7 @@
 %define		_pearname	%{_class}_%{_subclass}
 
 Summary:	%{_pearname} - manipulate XBM images
-Summary(pl.UTF-8):   %{_pearname} - obróbka obrazów XBM
+Summary(pl.UTF-8):	%{_pearname} - obróbka obrazów XBM
 Name:		php-pear-%{_pearname}
 Version:	0.9.0
 %define	_rc RC1
