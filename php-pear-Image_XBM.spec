@@ -3,23 +3,23 @@
 %define		_subclass	XBM
 %define		_status		beta
 %define		_pearname	%{_class}_%{_subclass}
-
+%define		subver RC1
+%define		rel 3
 Summary:	%{_pearname} - manipulate XBM images
 Summary(pl.UTF-8):	%{_pearname} - obróbka obrazów XBM
 Name:		php-pear-%{_pearname}
 Version:	0.9.0
-%define	_rc RC1
-%define	_rel 2
-Release:	%{_rc}.%{_rel}
+Release:	%{subver}.%{rel}
 License:	PHP 2.02
 Group:		Development/Languages/PHP
-Source0:	http://pear.php.net/get/%{_pearname}-%{version}%{_rc}.tgz
+Source0:	http://pear.php.net/get/%{_pearname}-%{version}%{subver}.tgz
 # Source0-md5:	b31e294640e1e2370a0270288364469e
 URL:		http://pear.php.net/package/Image_XBM/
 BuildRequires:	php-pear-PEAR
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
 BuildRequires:	rpmbuild(macros) >= 1.300
 Requires:	php-pear
+Suggests:	php-pear-Text_Figlet
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
