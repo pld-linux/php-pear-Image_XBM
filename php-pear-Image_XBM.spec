@@ -1,4 +1,3 @@
-%include	/usr/lib/rpm/macros.php
 %define		_class		Image
 %define		_subclass	XBM
 %define		_status		beta
