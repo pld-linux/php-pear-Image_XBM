@@ -3,7 +3,7 @@
 %define		_status		beta
 %define		_pearname	%{_class}_%{_subclass}
 %define		subver RC1
-%define		rel 3
+%define		rel 4
 Summary:	%{_pearname} - manipulate XBM images
 Summary(pl.UTF-8):	%{_pearname} - obróbka obrazów XBM
 Name:		php-pear-%{_pearname}
